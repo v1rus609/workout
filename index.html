@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omar Workout Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+  <div class="background-grid"></div>
+
+  <main class="app-shell">
+    <section id="welcomeScreen" class="screen active">
+      <div class="card hero-card">
+        <p class="eyebrow">Workout System</p>
+        <h1>Welcome back, Omar.</h1>
+        <p class="hero-text">Let’s start working out.</p>
+        <button id="startBtn" class="primary-btn">Start</button>
+      </div>
+    </section>
+
+    <section id="daySelectScreen" class="screen">
+      <div class="card select-card">
+        <p class="eyebrow">Training Mode</p>
+        <h2>Select your day</h2>
+        <p class="subtext" id="selectionSubtext">
+          Choose the workout day you want to start.
+        </p>
+
+        <div id="continueWrap" class="continue-wrap hidden">
+          <button id="continueBtn" class="continue-btn">Continue Day 1</button>
+        </div>
+
+        <div class="day-grid">
+          <button class="day-btn" data-day="1">Day 1</button>
+          <button class="day-btn" data-day="2">Day 2</button>
+          <button class="day-btn" data-day="3">Day 3</button>
+        </div>
+
+        <button id="resetBtn" class="ghost-btn hidden">Reset workout cycle</button>
+      </div>
+    </section>
+
+    <section id="workoutScreen" class="screen">
+      <div class="card workout-card" id="workoutTouchArea">
+        <div class="workout-toolbar">
+          <button id="backBtn" class="icon-btn2" aria-label="Back to day select">←</button>
+
+          <div class="switch-wrap">
+            <button id="prevDayBtn" class="icon-btn" aria-label="Previous workout day">‹</button>
+            <span class="switch-hint">Swipe or tap to switch day</span>
+            <button id="nextDayBtn" class="icon-btn" aria-label="Next workout day">›</button>
+          </div>
+
+          <button id="resetCycleBtn" class="ghost-btn small-btn">Reset cycle</button>
+        </div>
+
+        <p id="workoutDaySmall" class="eyebrow">Day 1</p>
+        <h2 id="workoutTitle">Push Power</h2>
+        <p id="workoutFocus" class="subtext">Chest, shoulders, triceps</p>
+
+        <div id="groupFilters" class="filter-row"></div>
+
+        <div class="player-card">
+          <div class="player-head">
+            <div>
+              <p id="currentGroupLabel" class="tiny-label">Chest focus</p>
+              <h3 id="currentExerciseName">Barbell Bench Press</h3>
+              <p id="currentExerciseCue" class="cue-text">
+                Drive your feet into the floor, keep your shoulder blades tight, and lower the bar under control.
+              </p>
+            </div>
+
+            <div class="counter-pill" id="exerciseCounter">1 / 6</div>
+          </div>
+
+          <div class="video-stage">
+            <video
+              id="exerciseVideo"
+              class="exercise-video"
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div id="videoFallback" class="video-fallback hidden">
+              Add a short mp4 clip in the videos folder for this exercise.
+            </div>
+          </div>
+
+
+<div class="set-flow">
+  <div id="setDisplay" class="set-display">Set 1 - 6 Reps</div>
+
+  <div class="set-action-row">
+    <button id="setActionBtn" class="primary-btn slim-btn">Start Set 1</button>
+    <div id="countdownBubble" class="countdown-bubble hidden">Rest 90s</div>
+  </div>
+
+  <div class="progress-block">
+    <div class="progress-track">
+      <div id="dayProgressBar" class="progress-bar"></div>
+    </div>
+    <p id="progressText" class="subtext compact-text">0% of workout completed</p>
+  </div>
+</div>
+
+        <div class="jump-section">
+          <p class="tiny-label">Quick jump</p>
+          <div id="exerciseChips" class="exercise-chip-row"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
