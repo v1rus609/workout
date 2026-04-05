@@ -207,9 +207,6 @@ const countdownBubble = document.getElementById("countdownBubble");
 const dayProgressBar = document.getElementById("dayProgressBar");
 const progressText = document.getElementById("progressText");
 const exerciseChips = document.getElementById("exerciseChips");
-const workoutTouchArea = document.getElementById("workoutTouchArea");
-
-let touchStartX = 0;
 
 function buildDayState(day) {
   return {
@@ -716,22 +713,6 @@ setActionBtn.addEventListener("click", () => {
   }
 });
 
-workoutTouchArea.addEventListener("touchstart", (event) => {
-  touchStartX = event.changedTouches[0].clientX;
-});
-
-workoutTouchArea.addEventListener("touchend", (event) => {
-  const touchEndX = event.changedTouches[0].clientX;
-  const deltaX = touchEndX - touchStartX;
-
-  if (Math.abs(deltaX) < 70) return;
-
-  if (deltaX < 0) {
-    goToNextDay();
-  } else {
-    goToPreviousDay();
-  }
-});
 
 setInterval(() => {
   if (!state.selectedDay || !workoutScreen.classList.contains("active")) return;
