@@ -713,6 +713,56 @@ setActionBtn.addEventListener("click", () => {
   }
 });
 
+const musicPlayer = document.getElementById("musicPlayer");
+const closePlayerButton = document.getElementById("closePlayer");
+const audioPlayer = document.getElementById("audioPlayer");
+const audioSource = document.getElementById("audioSource");
+const songTitle = document.getElementById("songTitle");
+
+// Array of song files (you can add more here)
+const songs = [
+  { file: "1.mp3", title: "Song 1" },
+  { file: "2.mp3", title: "Song 2" },
+  { file: "3.mp3", title: "Song 3" }
+];
+
+let currentSongIndex = 0;
+
+// Function to play the current song
+function playSong() {
+  audioSource.src = songs[currentSongIndex].file; // Set the current song file
+  songTitle.textContent = "Now Playing: " + songs[currentSongIndex].title; // Set the song title
+  audioPlayer.load(); // Reload the player with the new song
+  audioPlayer.play(); // Automatically play the new song
+}
+
+// Open the music player and play the first song by default
+function openMusicPlayer() {
+  musicPlayer.style.display = "block";
+  playSong();
+}
+
+// Close the music player when the close button is clicked
+closePlayerButton.addEventListener("click", () => {
+  musicPlayer.style.display = "none"; // Hide the music player
+  audioPlayer.pause(); // Pause the audio
+});
+
+// Change to the next song
+function nextSong() {
+  currentSongIndex = (currentSongIndex + 1) % songs.length; // Loop back to the first song after the last one
+  playSong();
+}
+
+// Optionally add a "Next" button if you want the user to control the song switch
+const nextButton = document.createElement("button");
+nextButton.textContent = "Next Song";
+document.body.appendChild(nextButton); // Add the button to the page
+
+nextButton.addEventListener("click", nextSong);
+
+// Example: open the player when needed
+openMusicPlayer(); // Uncomment to test opening the player on page load
 
 setInterval(() => {
   if (!state.selectedDay || !workoutScreen.classList.contains("active")) return;

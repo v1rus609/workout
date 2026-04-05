@@ -41,6 +41,8 @@
 
         <button id="resetBtn" class="ghost-btn hidden">Reset workout cycle</button>
       </div>
+	  
+	  
     </section>
 
     <section id="workoutScreen" class="screen">
@@ -56,6 +58,17 @@
 
           <button id="resetCycleBtn" class="ghost-btn small-btn">Reset cycle</button>
         </div>
+		
+<div id="musicPlayer" class="music-player">
+  <div class="player-header">
+    <span id="songTitle">Now Playing: Your Song</span>
+    <button id="closePlayer">&#10005;</button>
+  </div>
+  <audio id="audioPlayer" controls>
+    <source id="audioSource" src="1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 
         <p id="workoutDaySmall" class="eyebrow">Day 1</p>
         <h2 id="workoutTitle">Push Power</h2>

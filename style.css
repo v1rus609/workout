@@ -919,6 +919,44 @@ body.workout-mode .screen {
   display: none !important;
 }
 
+.music-player {
+  display: block; /* Make it visible by default */
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.player-header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#closePlayer {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#closePlayer:hover {
+  background-color: #c0392b;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#songTitle {
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   body.workout-mode .app-shell {
     padding: 20px;
