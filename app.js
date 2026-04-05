@@ -718,6 +718,8 @@ const closePlayerButton = document.getElementById("closePlayer");
 const audioPlayer = document.getElementById("audioPlayer");
 const audioSource = document.getElementById("audioSource");
 const songTitle = document.getElementById("songTitle");
+const nextSongButton = document.getElementById("nextSong");
+const prevSongButton = document.getElementById("prevSong");
 
 // Array of song files (you can add more here)
 const songs = [
@@ -750,9 +752,19 @@ closePlayerButton.addEventListener("click", () => {
 
 // Change to the next song
 function nextSong() {
-  currentSongIndex = (currentSongIndex + 1) % songs.length; // Loop back to the first song after the last one
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
   playSong();
 }
+
+// Change to previous song
+function prevSong() {
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  playSong();
+}
+
+// Event listeners
+nextSongButton.addEventListener("click", nextSong);
+prevSongButton.addEventListener("click", prevSong);
 
 // Optionally add a "Next" button if you want the user to control the song switch
 const nextButton = document.createElement("button");
