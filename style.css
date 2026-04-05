@@ -956,7 +956,17 @@ audio {
 #songTitle {
   font-weight: bold;
 }
+.player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
 
+.player-controls button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
 @media (min-width: 768px) {
   body.workout-mode .app-shell {
     padding: 20px;
