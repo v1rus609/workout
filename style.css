@@ -919,54 +919,171 @@ body.workout-mode .screen {
   display: none !important;
 }
 
+
+/* Base styling for the player */
 .music-player {
-  display: block; /* Make it visible by default */
-  color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  width: 100%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
+  width: 300px;
+  height: auto;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;  /* Center horizontally */
+  text-align: center; /* Center text and elements */
 }
 
-.player-header {
-    display: none;
-    justify-content: space-between;
+.album-art img {
+  max-width: 120px;
+  width: 30%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.album-art {
+  display: contents;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-info h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-block-start: 2em;
+  margin-block-end: -0.5em;
+}
+
+.song-info p {
+  font-size: 14px;
+  color: lightgray;
+  margin-block-start: 0.8em;
+  margin-block-end: 0.4em;
+}
+
+.details {
+	font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#volume-control {
+  height: 8px;
+  -webkit-appearance: none;
+  background: #111;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 6);
+}
+#volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #015eea, #00c0fa);
+  cursor: pointer;
+  border: 1px solid #333;
+  box-shadow: -407px 0 0 400px rgba(0, 192, 250, 1.0);
+}
+
+
+/* Volume control and icon styling */
+.volume-icon {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
     align-items: center;
 }
 
-#closePlayer {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 5px 10px;
-  cursor: pointer;
-}
 
-#closePlayer:hover {
-  background-color: #c0392b;
-}
-
-audio {
-  width: 100%;
-  margin-top: 10px;
-}
-
-#songTitle {
-  font-weight: bold;
-}
-.player-controls {
+/* Controls section - buttons */
+.controls {
+  margin-top: 15px;
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
+  justify-content: space-around; /* Space out controls evenly */
+  flex-wrap: wrap;  /* Allow buttons to wrap on smaller screens */
 }
 
-.player-controls button {
-  padding: 8px 12px;
+.controls button {
+  background: none;
+  border: none;
+  padding: 10px;
   cursor: pointer;
 }
+
+.controls img {
+    width: 20px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover img {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+
+/* Song timeline (progress bar) */
+.song-timeline {
+  font-family: sans-serif;
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+/* Song timeline text (current time and duration) */
+.song-timeline span {
+  font-size: 12px;
+}
+  
+#song-progress {
+  width: 90%;
+  height: 10px;
+  -webkit-appearance: none;
+  background: #111;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 6);
+}
+#song-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #015eea, #00c0fa);
+  cursor: pointer;
+  border: 1.5px solid #333;
+  box-shadow: -407px 0 0 400px rgba(0, 192, 250, 1.0);
+}
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 600px) {
+  .music-player {
+    width: 100%; /* Take up 90% of the screen width on small devices */
+    padding: 15px; /* Reduce padding on small screens */
+  }
+
+  .album-art img {
+    width: 50%; /* Make album art slightly larger */
+  }
+
+  .controls {
+    margin-top: 10px;
+    justify-content: space-evenly; /* Space out the control buttons */
+  }
+
+  #volume-control {
+    width: 80%; /* Control width for smaller appearance */
+  }
+}
+
 @media (min-width: 768px) {
   body.workout-mode .app-shell {
     padding: 20px;
