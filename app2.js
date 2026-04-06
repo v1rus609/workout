@@ -3,18 +3,18 @@ let isPlaying = false;
 let currentSongIndex = 0;
 const songs = [
   { title: "Rosenrot", artist: "Rammstein", src: "1.mp3", albumArt: "arts/Rosenrot_high-res.jpg" },
-  { title: "Ich will", artist: "Rammstein", src: "songs/Ich will.mp3", albumArt: "arts/icch will.jpg" },
-  { title: "ATWA", artist: "System Of A Down", src: "songs/ATWA.mp3", albumArt: "arts/ATWA.jpg" },
-  { title: "Chop Suey!", artist: "System Of A Down", src: "songs/Chop Suey!.mp3", albumArt: "arts/Chop Suey!.jpg" },
-  { title: "Toxicity", artist: "System Of A Down", src: "songs/Toxicity.mp3", albumArt: "arts/ATWA.jpg" },
-  { title: "Aerials", artist: "System Of A Down", src: "songs/Aerials.mp3", albumArt: "arts/Aerials.jpg" },
-  {title: "Like a Stone", artist: "Audioslave", src: "songs/Like a Stone.mp3", albumArt: "arts/Like a Stone.jpg" },
-  {title: "Smells Like Teen Spirit", artist: "Nirvana", src: "songs/Smells Like Teen Spirit.mp3", albumArt: "arts/Smells Like Teen Spirit.jpg" },
-  {title: "The Kill", artist: "Thirty Seconds To Mars", src: "songs/The Kill.mp3", albumArt: "arts/The Kill.jpg" },
-  {title: "Pyro", artist: "Kings Of Leon", src: "songs/Pyro.mp3", albumArt: "arts/Pyro.jpg" },
-  {title: "Teardrop", artist: "Massive Attack", src: "songs/Teardrop.mp3", albumArt: "arts/Teardrop.jpg" },
-  {title: "Aaoge Tum Kabhi", artist: "The Local Train", src: "songs/Aaoge Tum Kabhi.mp3", albumArt: "arts/Aaoge Tum Kabhi.jpg" },
-  {title: "Seven Nation Army", artist: "The White Stripes", src: "songs/Seven Nation Army.mp3", albumArt: "arts/Seven Nation Army.jpg" }
+  { title: "Ich will", artist: "Rammstein", src: "2.mp3", albumArt: "arts/icch will.jpg" },
+  { title: "ATWA", artist: "System Of A Down", src: "3.mp3", albumArt: "arts/ATWA.jpg" },
+  { title: "Chop Suey!", artist: "System Of A Down", src: "4.mp3", albumArt: "arts/Chop Suey!.jpg" },
+  { title: "Toxicity", artist: "System Of A Down", src: "5.mp3", albumArt: "arts/ATWA.jpg" },
+  { title: "Aerials", artist: "System Of A Down", src: "6.mp3", albumArt: "arts/Aerials.jpg" },
+  {title: "Like a Stone", artist: "Audioslave", src: "7.mp3", albumArt: "arts/Like a Stone.jpg" },
+  {title: "Smells Like Teen Spirit", artist: "Nirvana", src: "8.mp3", albumArt: "arts/Smells Like Teen Spirit.jpg" },
+  {title: "The Kill", artist: "Thirty Seconds To Mars", src: "9.mp3", albumArt: "arts/The Kill.jpg" },
+  {title: "Pyro", artist: "Kings Of Leon", src: "10.mp3", albumArt: "arts/Pyro.jpg" },
+  {title: "Teardrop", artist: "Massive Attack", src: "11.mp3", albumArt: "arts/Teardrop.jpg" },
+  {title: "Aaoge Tum Kabhi", artist: "The Local Train", src: "12.mp3", albumArt: "arts/Aaoge Tum Kabhi.jpg" },
+  {title: "Seven Nation Army", artist: "The White Stripes", src: "13.mp3", albumArt: "arts/Seven Nation Army.jpg" }
   // Add more songs here
 ];
 
