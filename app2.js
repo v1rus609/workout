@@ -2,7 +2,7 @@ const audio = new Audio();
 let isPlaying = false;
 let currentSongIndex = 0;
 const songs = [
-  { title: "Rosenrot", artist: "Rammstein", src: "songs/Rosenrot.mp3", albumArt: "arts/Rosenrot_high-res.jpg" },
+  { title: "Rosenrot", artist: "Rammstein", src: "1.mp3", albumArt: "arts/Rosenrot_high-res.jpg" },
   { title: "Ich will", artist: "Rammstein", src: "songs/Ich will.mp3", albumArt: "arts/icch will.jpg" },
   { title: "ATWA", artist: "System Of A Down", src: "songs/ATWA.mp3", albumArt: "arts/ATWA.jpg" },
   { title: "Chop Suey!", artist: "System Of A Down", src: "songs/Chop Suey!.mp3", albumArt: "arts/Chop Suey!.jpg" },
