@@ -4,9 +4,9 @@ let currentSongIndex = 0;
 const songs = [
   { title: "Rosenrot", artist: "Rammstein", src: "1.mp3", albumArt: "arts/Rosenrot_high-res.jpg" },
   { title: "Ich will", artist: "Rammstein", src: "2.mp3", albumArt: "arts/icch will.jpg" },
-  { title: "ATWA", artist: "System Of A Down", src: "3.mp3", albumArt: "arts/ATWA.jpg" },
+  { title: "ATWA", artist: "System Of A Down", src: "3.mp3", albumArt: "arts/atwa.jpg" },
   { title: "Chop Suey!", artist: "System Of A Down", src: "4.mp3", albumArt: "arts/Chop Suey!.jpg" },
-  { title: "Toxicity", artist: "System Of A Down", src: "5.mp3", albumArt: "arts/ATWA.jpg" },
+  { title: "Toxicity", artist: "System Of A Down", src: "5.mp3", albumArt: "arts/atwa.jpg" },
   { title: "Aerials", artist: "System Of A Down", src: "6.mp3", albumArt: "arts/Aerials.jpg" },
   {title: "Like a Stone", artist: "Audioslave", src: "7.mp3", albumArt: "arts/Like a Stone.jpg" },
   {title: "Smells Like Teen Spirit", artist: "Nirvana", src: "8.mp3", albumArt: "arts/Smells Like Teen Spirit.jpg" },
