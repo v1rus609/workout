@@ -143,6 +143,50 @@ function formatTime(time) {
   return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
+// Replay Button functionality
+const replayBtn = document.getElementById('replay');
+replayBtn.addEventListener('click', () => {
+  audio.currentTime = 0;  // Reset the song to the beginning
+  audio.play(); // Play the song again
+  playIcon.src = "pause-icon.png"; // Change the play icon to pause
+  isPlaying = true; // Update the playing state
+});
+
+// Shuffle Button functionality
+const shuffleBtn = document.getElementById('shuffle');
+shuffleBtn.addEventListener('click', () => {
+  // Generate a random song index from the list
+  const randomIndex = Math.floor(Math.random() * songs.length);
+  currentSongIndex = randomIndex; // Update the current song index to the random index
+  loadSong(currentSongIndex); // Load the randomly chosen song
+  audio.play(); // Play the new song
+  playIcon.src = "pause-icon.png"; // Change the play icon to pause
+  isPlaying = true; // Update the playing state
+});
+
+// Function to load a song into the player
+function loadSong(songIndex) {
+  const song = songs[songIndex];
+  songTitle.textContent = song.title;
+  artistName.textContent = song.artist;
+  albumCover.src = song.albumArt;
+  audio.src = song.src;
+  audio.load(); // Preload the audio to prevent delay
+  songProgress.value = 0; // Reset progress bar to start
+  songDuration.textContent = formatTime(audio.duration); // Display the duration of the new song
+  currentTime.textContent = "0:00"; // Reset current time
+}
+
+// Format the time correctly (in mm:ss format)
+function formatTime(time) {
+  if (isNaN(time)) {
+    return "0:00";  // If time is invalid, return a default time
+  }
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60);
+  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
 // Ensure that play is called on first click
 playPauseBtn.addEventListener('click', togglePlayPause);
 
